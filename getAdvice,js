@@ -1,0 +1,17 @@
+let advice, id
+let adviceText = document.querySelector("#adviceText")
+let adviceId = document.querySelector("#adviceId")
+let newAdviceBtn = document.querySelector("#newAdviceBtn")
+
+async function getAdvice() {
+    const res = await fetch('https://api.adviceslip.com/advice', { cache: "no-store" })
+    data = await res.json();
+    advice = data.slip.advice
+    id = data.slip.id
+    adviceText.innerHTML = advice
+    adviceId.innerHTML = "Advice #" + id
+}
+
+getAdvice()
+
+newAdviceBtn.addEventListener('click', getAdvice)

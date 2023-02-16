@@ -1,0 +1,100 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    --light_cyan: hsl(193, 38%, 86%);
+    --neon_green: hsl(150, 100%, 66%);
+    --grayish-blue: hsl(217, 19%, 38%);
+    --dark-grayish-blue: hsl(217, 19%, 24%);
+    --dark-blue: hsl(218, 23%, 16%);
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    background-color: var(--dark-blue);
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.advice_generator {
+    text-align: center;
+    background-color: var(--dark-grayish-blue);
+    width: 540px;
+    height: 332px;
+    border-radius: 15px;
+    padding: 15px 40px 42px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#adviceId {
+    color: var(--neon_green);
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 0.25em;
+}
+
+#adviceText {
+    font-size: 1.7em;
+    color: var(--light_cyan);
+}
+
+#newAdviceBtn {
+    position: absolute;
+    bottom: -30px;
+    left: calc(50% - 32px);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--neon_green);
+    background-image: url(images/icon-dice.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+#newAdviceBtn:hover {
+    -webkit-box-shadow: 0px 0px 34px 4px var(--neon_green);
+    -moz-box-shadow: 0px 0px 34px 4px var(--neon_green);
+    box-shadow: 0px 0px 34px 4px var(--neon_green);
+}
+
+.decor {
+    background: url(images/pattern-divider-desktop.svg);
+    width: 100%;
+    height: 18px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 12px;
+}
+
+@media (max-width: 560px) {
+    .advice_generator {
+        width: 90%;
+        height: 320px;
+        padding: 5px 22px 30px;
+    }
+
+    #adviceId {
+        font-size: 0.65em;
+        letter-spacing: 0.35em;
+    }
+
+    #adviceText {
+        font-size: 1.5em;
+        color: var(--light_cyan);
+    }
+
+    .decor {
+        margin-top: 0;
+        background: url(images/pattern-divider-mobile.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
